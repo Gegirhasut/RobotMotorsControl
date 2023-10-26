@@ -5,6 +5,7 @@ Test work in dron's course
 
 ### Клонирую в текущую директорию
 
+```
 vagrant@vagrant:~/catkin_ws/devel/RobotMotorsControl$ git clone https://github.com/Gegirhasut/RobotMotorsControl.git .
 Cloning into '.'...
 remote: Enumerating objects: 6, done.
@@ -12,14 +13,16 @@ remote: Counting objects: 100% (6/6), done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0
 Unpacking objects: 100% (6/6), 1.38 KiB | 706.00 KiB/s, done.
-
+```
 ### Создаем .gitignore
 Т.к. код писал в idea, то создал файл .gitignore и поместил туда .idea/
+```
 vagrant@vagrant:/code/ros$ git add .gitignore
-
+```
 Остальные файлы через idea добавил в git
 
 ### Внес изменения в файлы и добавил в git
+```
 vagrant@vagrant:/code/ros$ git status
 On branch main
 Your branch is up to date with 'origin/main'.
@@ -46,13 +49,13 @@ Changes to be committed:
         new file:   .gitignore
         new file:   motors_control.py
         new file:   use_robot.py
-
+```
 ### Пушим в Github
 Было несколько проблем:
 Сначала использовал токен, который вчера создал для тестового проекта
 Сгенерил новый, но не дал права
 Сделал пуш, но забыл сделать commit перед этим.
-
+```
 vagrant@vagrant:/code/ros$ git commit -m "First files"
 [main 0423d22] First files
  3 files changed, 16 insertions(+)
@@ -70,8 +73,9 @@ Writing objects: 100% (5/5), 524 bytes | 262.00 KiB/s, done.
 Total 5 (delta 0), reused 0 (delta 0)
 To https://github.com/Gegirhasut/RobotMotorsControl.git
    a3108aa..0423d22  main -> main
-
+```
 ### Создаем новый бранч и комитим
+```
 vagrant@vagrant:/code/ros$ git checkout -b "TASK-1-New-super-engine"
 Switched to a new branch 'TASK-1-New-super-engine'
 vagrant@vagrant:/code/ros$ git status
@@ -145,9 +149,9 @@ To https://github.com/Gegirhasut/RobotMotorsControl.git
  * [new branch]      TASK-1-New-super-engine -> TASK-1-New-super-engine
 Branch 'TASK-1-New-super-engine' set up to track remote branch 'TASK-1-New-super-engine' from 'origin'.
 vagrant@vagrant:/code/ros$
-
+```
 ### Создание pull-request и merge в main
-
+```
 vagrant@vagrant:/code/ros$ git pull
 remote: Enumerating objects: 1, done.
 remote: Counting objects: 100% (1/1), done.
@@ -169,5 +173,5 @@ Fast-forward
  .gitignore        | 3 ++-
  motors_control.py | 3 +++
  2 files changed, 5 insertions(+), 1 deletion(-)
-
+```
 Также переключил на main и забрал изменения
